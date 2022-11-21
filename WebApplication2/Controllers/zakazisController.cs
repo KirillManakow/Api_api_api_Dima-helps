@@ -64,7 +64,7 @@ namespace WebApplication2.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-        // PUT: api/zakazis/5
+        // PUTNoImage: api/zakazis/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutzakaziNoImage(int id, zakazi zakazi)
         {
