@@ -64,32 +64,7 @@ namespace WebApplication2.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-        // PUTNoImage: api/zakazis/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutzakaziNoImage(int id, zakazi zakazi)
-        {
-            var dbzakaz = db.zakazi.FirstOrDefault(x => x.id_zakaza.Equals(id));
-            dbzakaz.user = zakazi.user;
-            dbzakaz.konfiguracia = zakazi.konfiguracia;
-            dbzakaz.zena = zakazi.zena;
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!zakaziExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+      
 
         // POST: api/zakazis
         [ResponseType(typeof(zakazi))]
